@@ -1,0 +1,18 @@
+<h2>Edit Restuarant</h2>
+
+<% if flash.has?(:message) %>
+  <%= flash[:message] %>
+<% end %>
+<br>
+
+<form method="post" action="/restaurants/<%=@restaurant.id%>" id="form1" >
+    <input id="hidden" type="hidden" name="_method" value="patch">
+    <h1>Restaurant Name: <input type="text" name="restaurant[name]" id="restaurant_name" value = "<%=@restaurant.name%>"></h1>
+
+</form>
+<button type="submit" form="form1" value="Submit">Update Restaurant</button>
+
+<form method="post" action="/restaurants/<%= @restaurant.id %>">
+        <input id="hidden" type="hidden" name="_method" value="DELETE">
+        <input type="submit" value="Delete Restaurant">
+</form>

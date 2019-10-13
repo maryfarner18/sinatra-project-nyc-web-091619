@@ -1,0 +1,22 @@
+<h2>Create New Restaurant</h2>
+
+<% if flash.has?(:message) %>
+  <%= flash[:message] %>
+<% end %>
+<br>
+
+<h1>Search Restaurants</h1>
+<form method="post" action="/restaurants" id="form2" >
+    <h2>City: <input type="text" name="search[city]" id="city"></h2>
+    <h2>Cusine: <input type="text" name="search[cuisine]" id="cuisine"></h2> </h2>
+</form>
+<button type="submit" form="form2" value="Submit">Search</button>
+
+<br>
+<h1>Or Manually Add A Restaurant</h1>
+
+<form method="post" action="/restaurants" id="form1" >
+    <h2>Restaurant Name: <input type="text" name="restaurant[name]" id="restaurant_name"></h2>
+</form>
+
+<button type="submit" form="form1" value="Submit">Create New Restaurant</button>

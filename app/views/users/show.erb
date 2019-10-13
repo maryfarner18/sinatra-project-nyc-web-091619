@@ -1,0 +1,7 @@
+<h1><%=@user.name%></h1>
+
+<h3>Restaurants of Interest:</h3>
+<%@restaurants.each do |restaurant|%>
+    <li><a href= "restaurants/<%=restaurant.id%>%"><%=restaurant.name%></a></li>
+<%end%>
+</ul>

@@ -1,0 +1,21 @@
+<h1>Restaurant: <%=@restaurant.name%></h1>
+<h2>Rating: <%=@restaurant.rating%></h2>
+<h2>Address: <%=@restaurant.address%> </h2>
+
+<h3>Users interested:</h3>
+<ul>
+<%@my_users.each do |user|%>
+    <li><a href= "users/<%=user.id%>%"><%=user.name%></a></li>
+<%end%>
+</ul>
+
+<h3>Add to user's visit list</h3>
+<form method="post" action="/visits" id="form1" >
+    <input id="restaurant_id" type="hidden" name="restaurant_id" value="<%=@restaurant.id%>">
+    <select name="user_id">
+        <%@users.each do |user|%>
+            <option value="<%=user.id%>"><%=user.name%></option>
+        <%end%>
+    </select>
+</form>
+<button type="submit" form="form1" value="Submit">Add to User List</button>
